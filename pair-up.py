@@ -29,3 +29,22 @@
 # In the end there should be a set of sets with 7 + 6 + 5 + 4 + 3 + 2 + 1 = 28 pairings
 
 # What to do with odd groups?
+
+def pair_up(lst):
+    num_of_ind = len(lst)
+    num_of_rounds = len(lst) - 1
+
+    total_pairs = []
+
+    for idx, ind in enumerate(lst):
+        for partner_number in range(idx+1, num_of_ind):
+            total_pairs.append((ind, lst[partner_number]))
+    
+    print("Number of Pairs:", len(total_pairs), "\n Pairs Listed:", total_pairs)
+
+    for round_num in range(1, num_of_ind):
+
+        print("Round:", round_num)
+
+
+pair_up(['Rachel', 'Hunter', 'Alicia', 'Nan', 'Elizabeth', 'Ilana', 'Jen', 'Yvonne'])
