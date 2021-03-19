@@ -1,22 +1,5 @@
 import random
 
-# Inspiration:
-# My bootcamp experience was being re-paired with the samebpeople several times
-# and never had the opportunities to code with others.
-
-# Relation to teaching:
-# Students choose their friends,
-# Teachers choose heterogeneous or homogenous pairs.
-
-# Potential solution:
-# This is random pairs with no repetition!
-
-# Given a list of names, names are returned each round as pairs.
-# Each pair is only shown once.
-
-# Pairs will be kept in a set as to not be repeated.
-# If pairs are already in a set, the algorithm will reroll.
-
 # Example:
 # Input:  ['Rachel', 'Hunter', 'Alicia', 'Nan', 'Elizabeth', 'Ilana', 'Jen', 'Yvonne']
 # Output Example:
