@@ -1,3 +1,5 @@
+import random
+
 # Inspiration:
 # My bootcamp experience was being re-paired with the samebpeople several times
 # and never had the opportunities to code with others.
@@ -31,6 +33,8 @@
 # What to do with odd groups?
 
 def pair_up(lst):
+    """ Input a list of people and returns non-repeat pairings in rounds."""
+
     num_of_ind = len(lst)
     num_of_rounds = len(lst) - 1
 
@@ -39,12 +43,25 @@ def pair_up(lst):
     for idx, ind in enumerate(lst):
         for partner_number in range(idx+1, num_of_ind):
             total_pairs.append((ind, lst[partner_number]))
-    
-    print("Number of Pairs:", len(total_pairs), "\n Pairs Listed:", total_pairs)
+
+    # print("Number of Pairs:", len(total_pairs), "\n Pairs Listed:", total_pairs)
+
+    num_of_pairs = len(total_pairs)
+
+    round_pairs_dict = {}
 
     for round_num in range(1, num_of_ind):
+        round_pairs =  []
 
-        print("Round:", round_num)
+        while len(round_pairs) < num_of_ind / 2:
+            pair_num = random.randint(0, num_of_pairs - 1)
+            round_pairs.append(total_pairs.pop(pair_num))
+            print("Total pairs left:", len(total_pairs))
+            num_of_pairs = len(total_pairs)
+            if len(round_pairs) == 4:
+                round_pairs_dict[round_num] = round_pairs
+
+        print(round_pairs_dict)
 
 
 pair_up(['Rachel', 'Hunter', 'Alicia', 'Nan', 'Elizabeth', 'Ilana', 'Jen', 'Yvonne'])
