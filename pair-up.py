@@ -16,7 +16,8 @@ import random
 # What to do with odd groups?
 
 def pair_up(lst):
-    """ Input a list of people and returns non-repeat pairings in rounds."""
+    """ Input a list of people and returns a dictionary with round numbers
+    as keys and random round pairs with non-repeating names as values."""
 
     num_of_ind = len(lst)
     num_of_rounds = len(lst) - 1
